@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { Calendar as CalendarIcon, MapPin, CheckCircle, Clock, AlertTriangle, ChevronLeft, ChevronRight, X, Sparkles, LogOut } from 'lucide-react'
+import { Calendar as CalendarIcon, MapPin, CheckCircle, Clock, AlertTriangle, ChevronLeft, ChevronRight, X, Sparkles, LogOut, Loader2 } from 'lucide-react'
 
 interface Event {
   id: number;
@@ -16,6 +16,7 @@ interface RSVP {
   id: number;
   eventId: number;
   status: string; // PENDING, CONFIRMED
+  email: string;
   event: Event;
 }
 

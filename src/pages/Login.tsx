@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { Mail, Lock, ArrowRight, AlertCircle, Loader2 } from 'lucide-react'
 
 const Login = () => {
   const { login, user } = useAuth()
   const navigate = useNavigate()
-  const location = useLocation()
   
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
