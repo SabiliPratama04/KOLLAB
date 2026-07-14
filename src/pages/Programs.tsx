@@ -318,7 +318,7 @@ const Programs = () => {
                   </div>
                   <h3 className="mt-6 text-2xl font-semibold text-brand-navy">{program.title}</h3>
                   <p className="mt-4 text-base leading-7 text-slate-600">{program.description}</p>
-                  <a href="#" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal">
+                  <a href={program.path} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal">
                     {program.action}
                     <ArrowRight className="h-4 w-4" />
                   </a>
