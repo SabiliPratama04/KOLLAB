@@ -655,7 +655,7 @@ const Programs = () => {
               <a href="#creator-class" className="inline-flex text-nowrap items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-brand-navy transition duration-300 hover:-translate-y-0.5 hover:border-brand-teal hover:text-brand-teal">
                 Explore Creator Class
               </a>
-              <a href="#partnership-program" className="inline-flex text-nowrap items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold text-brand-blue transition duration-300 hover:text-brand-green">
+              <a href="#partnership-program" className="inline-flex text-nowrap items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-brand-blue transition duration-300 hover:border-brand-green hover:text-brand-green">
                 Collaborate With KOLLAB
               </a>
             </div>
