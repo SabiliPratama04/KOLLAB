@@ -26,7 +26,7 @@ const App = () => {
       <div className="flex flex-col min-h-screen bg-white selection:bg-brand-green selection:text-white font-sans text-brand-navy">
         <Navbar />
         {/* Main Content Area */}
-        <main className="flex-grow pt-20">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

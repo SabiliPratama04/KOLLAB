@@ -21,6 +21,7 @@ const overviewPrograms = [
     title: 'Growth Circle',
     description: 'Networking santai untuk bertemu orang sejalan dan membangun koneksi meaningful.',
     action: 'Join Circle',
+    path: '#growth-circle',
     icon: Users,
     accent: 'bg-brand-green/10 text-brand-green',
   },
@@ -28,6 +29,7 @@ const overviewPrograms = [
     title: 'Creator Class',
     description: 'Ruang belajar skill creator, personal branding, AI workflow, content planning, dan monetization.',
     action: 'Explore Class',
+    path: '#creator-class',
     icon: Sparkles,
     accent: 'bg-brand-teal/10 text-brand-teal',
   },
@@ -35,6 +37,7 @@ const overviewPrograms = [
     title: 'Community Activation',
     description: 'Coffee circle, sharing session, workshop, dan pengalaman komunitas yang lebih human.',
     action: 'See Activities',
+    path: '#community-activation',
     icon: Coffee,
     accent: 'bg-brand-blue/10 text-brand-blue',
   },
@@ -42,6 +45,7 @@ const overviewPrograms = [
     title: 'Partnership Program',
     description: 'Kolaborasi dengan brand, venue, komunitas, kampus, creator, dan business partner.',
     action: 'Partner With Us',
+    path: '#partnership-program',
     icon: Handshake,
     accent: 'bg-brand-navy/10 text-brand-navy',
   },
@@ -221,22 +225,9 @@ const Programs = () => {
 
   return (
     <div className="overflow-hidden bg-white text-brand-navy">
-      <section className="relative overflow-hidden bg-brand-grey/50 py-16 sm:py-20">
+      <section className="relative overflow-hidden bg-brand-grey/50 py-16 sm:py-20 md:py-24">
         <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-brand-green/10 to-transparent" />
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-8 flex flex-wrap items-center justify-between gap-4 text-sm text-slate-500">
-            <nav className="hidden md:flex items-center gap-4">
-              {['Home', 'About', 'Programs', 'Community', 'Partnership', 'Contact'].map((item) => (
-                <span key={item} className={item === 'Programs' ? 'font-semibold text-brand-green' : 'hover:text-brand-navy transition'}>
-                  {item}
-                </span>
-              ))}
-            </nav>
-            <div className="inline-flex items-center rounded-full border border-brand-green/20 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand-green shadow-sm">
-              KOLLAB PROGRAMS
-            </div>
-          </div>
-
+        <div className="mx-auto max-w-360 px-6 sm:px-8 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div className="max-w-2xl space-y-8">
               <div className="space-y-4">
@@ -267,13 +258,13 @@ const Programs = () => {
             <div className="relative">
               <div className="pointer-events-none absolute -right-12 top-6 h-48 w-48 rounded-full bg-brand-green/10 blur-3xl" />
               <div className="pointer-events-none absolute left-10 bottom-0 h-40 w-40 rounded-full bg-brand-blue/10 blur-3xl" />
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_25px_100px_rgba(15,23,42,0.08)]">
+              <div className="rounded-xl border border-slate-200 bg-white p-8 shadow-[0_25px_100px_rgba(15,23,42,0.08)]">
                 <div className="grid gap-6 md:grid-cols-2">
                   {overviewPrograms.map((program) => {
                     const Icon = program.icon
                     return (
-                      <div key={program.title} className="rounded-[1.75rem] border border-slate-200 bg-brand-grey/80 p-5 shadow-sm">
-                        <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${program.accent}`}>
+                      <div key={program.title} className="rounded-lg border border-slate-200 bg-brand-grey/80 p-5 shadow-sm">
+                        <div className={`inline-flex h-12 w-12 items-center justify-center rounded-full ${program.accent}`}>
                           <Icon className="h-6 w-6" />
                         </div>
                         <h3 className="mt-5 text-xl font-semibold text-brand-navy">{program.title}</h3>
@@ -286,7 +277,7 @@ const Programs = () => {
                     )
                   })}
                 </div>
-                <div className="mt-8 flex items-center gap-3 rounded-[1.5rem] border border-brand-green/15 bg-brand-green/5 px-5 py-4 text-sm text-brand-navy">
+                <div className="mt-8 flex items-center gap-3 rounded-lg border border-brand-green/15 bg-brand-green/5 px-5 py-4 text-sm text-brand-navy">
                   <span className="inline-flex h-3.5 w-3.5 rounded-full bg-brand-green" />
                   <span>Semua program KOLLAB bekerja dalam satu ekosistem yang saling terhubung.</span>
                 </div>
@@ -296,7 +287,7 @@ const Programs = () => {
         </div>
       </section>
 
-      <section id="overview" className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
+      <section id="overview" className="mx-auto max-w-360 px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-brand-green">PROGRAM OVERVIEW</p>
@@ -312,8 +303,8 @@ const Programs = () => {
             {overviewPrograms.map((program) => {
               const Icon = program.icon
               return (
-                <div key={program.title} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
-                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${program.accent}`}>
+                <div key={program.title} className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
+                  <div className={`inline-flex h-12 w-12 items-center justify-center rounded-full ${program.accent}`}>
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-6 text-2xl font-semibold text-brand-navy">{program.title}</h3>
@@ -331,7 +322,7 @@ const Programs = () => {
       </section>
 
       <section id="growth-circle" className="bg-brand-grey/50 py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-360 px-6 sm:px-8 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div className="space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-brand-green">GROWTH CIRCLE</p>
@@ -346,7 +337,7 @@ const Programs = () => {
                 {growthBenefits.map((item) => {
                   const Icon = item.icon
                   return (
-                    <div key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm">
+                    <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
                       <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}`}>
                         <Icon className="h-5 w-5" />
                       </div>
@@ -365,10 +356,10 @@ const Programs = () => {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
               <div className="absolute right-8 top-10 h-24 w-24 rounded-full bg-brand-blue/10 blur-2xl" />
               <div className="absolute left-8 bottom-12 h-24 w-24 rounded-full bg-brand-green/10 blur-2xl" />
-              <div className="relative rounded-[2rem] border border-slate-100 bg-brand-grey p-6">
+              <div className="relative rounded-xl border border-slate-100 bg-brand-grey p-6">
                 <div className="flex items-center gap-3">
                   <div className="h-14 w-14 rounded-3xl bg-white shadow-sm" />
                   <div>
@@ -377,7 +368,7 @@ const Programs = () => {
                   </div>
                 </div>
                 <div className="mt-6 grid gap-4">
-                  <div className="rounded-[1.5rem] bg-white p-5 shadow-sm">
+                  <div className="rounded-lg bg-white p-5 shadow-sm">
                     <div className="flex items-center gap-3">
                       <div className="h-12 w-12 rounded-3xl bg-brand-green/10 flex items-center justify-center text-brand-green">
                         <Coffee className="h-5 w-5" />
@@ -388,7 +379,7 @@ const Programs = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-[1.5rem] bg-white p-5 shadow-sm">
+                  <div className="rounded-lg bg-white p-5 shadow-sm">
                     <div className="flex items-center gap-3">
                       <div className="h-12 w-12 rounded-3xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
                         <Users className="h-5 w-5" />
@@ -406,23 +397,23 @@ const Programs = () => {
         </div>
       </section>
 
-      <section id="creator-class" className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
+      <section id="creator-class" className="mx-auto max-w-360 px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-brand-grey p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-brand-grey p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
             <div className="absolute -right-8 top-10 h-32 w-32 rounded-full bg-brand-teal/10 blur-3xl" />
             <div className="absolute left-8 top-16 h-24 w-24 rounded-full bg-brand-green/10 blur-3xl" />
-            <div className="relative rounded-[2rem] bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.08)]">
-              <div className="flex items-center justify-between rounded-3xl bg-slate-100 p-4">
+            <div className="relative rounded-xl bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.08)]">
+              <div className="flex items-center justify-between rounded-lg bg-slate-100 p-4">
                 <div>
                   <p className="text-sm font-semibold text-slate-700">Creator Workflow</p>
                   <p className="text-xs text-slate-500">Learning, planning, creating.</p>
                 </div>
-                <div className="rounded-2xl bg-brand-green/10 px-3 py-2 text-sm font-semibold text-brand-green">Focus</div>
+                <div className="rounded-full bg-brand-green/10 px-3 py-2 text-sm font-semibold text-brand-green">Focus</div>
               </div>
               <div className="mt-6 grid gap-4">
-                <div className="rounded-[1.5rem] border border-slate-200 p-5">
+                <div className="rounded-lg border border-slate-200 p-5">
                   <div className="flex items-center gap-3">
-                    <div className="h-12 w-12 rounded-3xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                    <div className="h-12 w-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue">
                       <Laptop2 className="h-5 w-5" />
                     </div>
                     <div>
@@ -431,9 +422,9 @@ const Programs = () => {
                     </div>
                   </div>
                 </div>
-                <div className="rounded-[1.5rem] border border-slate-200 p-5">
+                <div className="rounded-lg border border-slate-200 p-5">
                   <div className="flex items-center gap-3">
-                    <div className="h-12 w-12 rounded-3xl bg-brand-green/10 flex items-center justify-center text-brand-green">
+                    <div className="h-12 w-12 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green">
                       <Camera className="h-5 w-5" />
                     </div>
                     <div>
@@ -459,7 +450,7 @@ const Programs = () => {
               {creatorFocus.map((item) => {
                 const Icon = item.icon
                 return (
-                  <div key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm">
+                  <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
                     <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}`}>
                       <Icon className="h-5 w-5" />
                     </div>
@@ -481,7 +472,7 @@ const Programs = () => {
       </section>
 
       <section id="community-activation" className="bg-brand-grey/50 py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-360 px-6 sm:px-8 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-brand-green">COMMUNITY ACTIVATION</p>
@@ -496,8 +487,8 @@ const Programs = () => {
                 {activationItems.map((item) => {
                   const Icon = item.icon
                   return (
-                    <div key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm">
-                      <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}`}>
+                    <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                      <div className={`inline-flex h-11 w-11 items-center justify-center rounded-full ${item.color}`}>
                         <Icon className="h-5 w-5" />
                       </div>
                       <h3 className="mt-4 text-lg font-semibold text-brand-navy">{item.title}</h3>
@@ -509,7 +500,7 @@ const Programs = () => {
             </div>
 
             <div className="grid gap-6">
-              <div className="rounded-[2rem] bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+              <div className="rounded-xl bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-3xl bg-brand-green/10 flex items-center justify-center text-brand-green">
                     <Coffee className="h-5 w-5" />
@@ -519,13 +510,13 @@ const Programs = () => {
                     <p className="text-sm text-slate-500">Rangkaian pengalaman yang terasa nyata dan hangat.</p>
                   </div>
                 </div>
-                <div className="mt-6 grid gap-3 rounded-[1.5rem] border border-slate-200 bg-brand-grey p-4">
+                <div className="mt-6 grid gap-3 rounded-lg border border-slate-200 bg-brand-grey p-4">
                   <p className="text-sm font-semibold text-brand-navy">Coffee circle</p>
                   <p className="text-sm text-slate-600">Tempat memulai percakapan tanpa tekanan.</p>
                 </div>
               </div>
 
-              <div className="rounded-[2rem] bg-brand-blue/5 p-6 shadow-[0_20px_80px_rgba(39,119,201,0.12)]">
+              <div className="rounded-xl bg-brand-blue/10 border border-brand-blue/25 p-6 shadow-[0_20px_80px_rgba(39,119,201,0.12)]">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-3xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
                     <Users className="h-5 w-5" />
@@ -535,7 +526,7 @@ const Programs = () => {
                     <p className="text-sm text-slate-600">Bertemu orang dengan tujuan yang saling melengkapi.</p>
                   </div>
                 </div>
-                <div className="mt-6 grid gap-3 rounded-[1.5rem] border border-slate-200 bg-white p-4">
+                <div className="mt-6 grid gap-3 rounded-lg border border-slate-200 bg-white p-4">
                   <p className="text-sm font-semibold text-brand-navy">Sharing session</p>
                   <p className="text-sm text-slate-600">Belajar dari cerita nyata dan insight praktis.</p>
                 </div>
@@ -552,7 +543,7 @@ const Programs = () => {
         </div>
       </section>
 
-      <section id="partnership-program" className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
+      <section id="partnership-program" className="mx-auto max-w-360 px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-brand-teal">PARTNERSHIP PROGRAM</p>
@@ -562,19 +553,11 @@ const Programs = () => {
             <p className="max-w-xl text-lg leading-8 text-slate-600">
               KOLLAB terbuka untuk kolaborasi dengan brand, venue, komunitas, kampus, creator, mentor, dan business owner yang ingin membangun ruang pertumbuhan bersama.
             </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {partnershipItems.slice(0, 2).map((item) => {
-                const Icon = item.icon
-                return (
-                  <div key={item.title} className="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm">
-                    <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}`}>
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="mt-4 text-lg font-semibold text-brand-navy">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
-                  </div>
-                )
-              })}
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="#" className="inline-flex items-center justify-center rounded-full bg-brand-navy px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-navy/15 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-blue">
+                Collaborate With KOLLAB
+              </a>
+              <p className="text-sm font-medium text-slate-500">Where Collaboration Creates Growth.</p>
             </div>
           </div>
 
@@ -582,7 +565,7 @@ const Programs = () => {
             {partnershipItems.map((item) => {
               const Icon = item.icon
               return (
-                <div key={item.title} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <div key={item.title} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                   <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${item.color}`}>
                     <Icon className="h-6 w-6" />
                   </div>
@@ -593,17 +576,10 @@ const Programs = () => {
             })}
           </div>
         </div>
-
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <a href="#" className="inline-flex items-center justify-center rounded-full bg-brand-navy px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-navy/15 transition duration-300 hover:-translate-y-0.5 hover:bg-brand-blue">
-            Collaborate With KOLLAB
-          </a>
-          <p className="text-sm font-medium text-slate-500">Where Collaboration Creates Growth.</p>
-        </div>
       </section>
 
       <section id="choose-path" className="bg-brand-grey/50 py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-360 px-6 sm:px-8 lg:px-12">
           <div className="space-y-6 text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-brand-green">CHOOSE YOUR PATH</p>
             <h2 className="text-3xl font-black leading-tight text-brand-navy sm:text-4xl">
@@ -618,7 +594,7 @@ const Programs = () => {
             {pathOptions.map((item) => {
               const Icon = item.icon
               return (
-                <div key={item.title} className="group rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:border-brand-green/20 hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
+                <div key={item.title} className="group rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-brand-green/20 hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
                   <div className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${item.color}`}>
                     <Icon className="h-6 w-6" />
                   </div>
@@ -637,7 +613,7 @@ const Programs = () => {
         </div>
       </section>
 
-      <section id="final-cta" className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
+      <section id="final-cta" className="mx-auto max-w-360 px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-brand-green">START WITH KOLLAB</p>
@@ -663,11 +639,11 @@ const Programs = () => {
             <p className="text-base font-medium text-slate-500">Grow Through Collaboration.</p>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-brand-grey p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-brand-grey p-8 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
             <div className="absolute -right-10 top-6 h-28 w-28 rounded-full bg-brand-green/10 blur-3xl" />
             <div className="absolute left-6 bottom-8 h-32 w-32 rounded-full bg-brand-blue/10 blur-3xl" />
-            <div className="relative rounded-[2rem] bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
-              <div className="flex justify-between items-center rounded-[1.75rem] bg-brand-blue/5 p-5">
+            <div className="relative rounded-xl bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+              <div className="flex justify-between items-center rounded-lg bg-brand-blue/5 p-5">
                 <div>
                   <p className="text-sm font-semibold text-brand-navy">Community circle</p>
                   <p className="text-sm text-slate-500">Diskusi hangat dengan tim creator dan partner.</p>
@@ -677,11 +653,11 @@ const Programs = () => {
                 </div>
               </div>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-slate-200 bg-brand-grey p-5">
+                <div className="rounded-lg border border-slate-200 bg-brand-grey p-5">
                   <p className="font-semibold text-brand-navy">Warm circle</p>
                   <p className="mt-2 text-sm text-slate-600">Ruang yang terasa mendukung dan bukan kaku.</p>
                 </div>
-                <div className="rounded-[1.5rem] border border-slate-200 bg-brand-grey p-5">
+                <div className="rounded-lg border border-slate-200 bg-brand-grey p-5">
                   <p className="font-semibold text-brand-navy">Practical growth</p>
                   <p className="mt-2 text-sm text-slate-600">Pengalaman yang bisa langsung dibawa ke langkah nyata.</p>
                 </div>

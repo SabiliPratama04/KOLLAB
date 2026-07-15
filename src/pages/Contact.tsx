@@ -7,32 +7,42 @@ const contactCards = [
   {
     title: 'Email',
     value: 'hello@kollab.id',
-    description: 'For partnerships, collaborations, and thoughtful conversations.',
+    description: 'Untuk kolaborasi, partnership, dan percakapan yang bernilai.',
     icon: Mail,
+    href: 'mailto:hello@kollab.id',
+    action: 'Kirim Email',
   },
   {
     title: 'WhatsApp',
     value: '+62 812 3456 7890',
-    description: 'Fast replies for new ideas, community inquiries, and opportunities.',
+    description: 'Respons cepat untuk ide baru, pertanyaan komunitas, dan peluang kolaborasi.',
     icon: MessageCircleMore,
+    href: 'https://wa.me/6281234567890',
+    action: 'Chat di WhatsApp',
   },
   {
     title: 'Instagram',
     value: '@kollab.id',
-    description: 'Follow our stories, community rhythms, and upcoming activations.',
+    description: 'Ikuti cerita, momen komunitas, dan aktivasi yang akan datang.',
     icon: Camera,
+    href: 'https://www.instagram.com',
+    action: 'Lihat Instagram',
   },
   {
     title: 'LinkedIn',
     value: 'KOLLAB Ecosystem',
-    description: 'Connect with our network of builders, creators, and professionals.',
+    description: 'Terhubung dengan creator, profesional, dan partner bisnis.',
     icon: BriefcaseBusiness,
+    href: 'https://www.linkedin.com',
+    action: 'Buka LinkedIn',
   },
   {
-    title: 'Office Location',
-    value: 'Medan, North Sumatra, Indonesia',
-    description: 'A human-first base for growth, connection, and collaboration.',
+    title: 'Kantor',
+    value: 'Jl. Gatot Subroto No.19, Petisah Tengah, Kec. Medan Petisah, Kota Medan, Sumatera Utara, Indonesia.',
+    description: 'Rumah kami untuk kolaborasi yang bermakna dan pertumbuhan yang sehat.',
     icon: MapPin,
+    href: 'https://maps.google.com',
+    action: 'Lihat Lokasi',
   },
 ]
 
@@ -40,24 +50,24 @@ const interests: InterestKey[] = ['Partnership', 'Community', 'Event', 'Business
 
 const faqs = [
   {
-    question: 'How long does KOLLAB usually respond?',
-    answer: 'Most inquiries receive a thoughtful response within 1–3 business days, depending on the nature of the request.',
+    question: 'Berapa lama KOLLAB biasanya membalas pesan?',
+    answer: 'Kebanyakan pertanyaan mendapatkan balasan yang thoughtful dalam waktu 1–3 hari kerja, tergantung pada jenis permintaannya.',
   },
   {
-    question: 'Can I collaborate with KOLLAB?',
-    answer: 'Absolutely. We welcome collaborations across community, events, business initiatives, and creative experiments.',
+    question: 'Apakah saya bisa berkolaborasi dengan KOLLAB?',
+    answer: 'Tentu. Kami menyambut kolaborasi di berbagai bidang, mulai dari komunitas, event, inisiatif bisnis, hingga eksperimen kreatif.',
   },
   {
-    question: 'Can businesses partner with KOLLAB?',
-    answer: 'Yes. We work with businesses that care about meaningful community building, growth, and long-term alignment.',
+    question: 'Apakah bisnis bisa menjadi partner KOLLAB?',
+    answer: 'Ya. Kami bekerja sama dengan bisnis yang peduli pada pembentukan komunitas yang bermakna, pertumbuhan yang sehat, dan alignment jangka panjang.',
   },
   {
-    question: 'How do I join the community?',
-    answer: 'You can start by reaching out through this page or following our channels for upcoming community opportunities.',
+    question: 'Bagaimana cara bergabung dengan komunitas?',
+    answer: 'Anda bisa mulai dengan menghubungi kami melalui halaman ini atau mengikuti kanal kami untuk melihat peluang komunitas yang akan datang.',
   },
   {
-    question: 'Do you organize offline events?',
-    answer: 'Yes, we host thoughtfully curated offline gatherings that create deeper connection and shared momentum.',
+    question: 'Apakah KOLLAB mengadakan event offline?',
+    answer: 'Ya. Kami menyelenggarakan gathering offline yang dirancang dengan hati-hati untuk menciptakan koneksi yang lebih dalam dan momentum bersama.',
   },
 ]
 
@@ -114,21 +124,21 @@ const Contact = () => {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/20 bg-brand-green/10 px-4 py-2 text-sm font-semibold text-brand-green">
               <Sparkles className="h-4 w-4" />
-              Contact KOLLAB
+              Hubungi KOLLAB
             </div>
             <h1 className="mt-6 text-4xl font-black leading-[1.05] tracking-[-0.03em] text-brand-navy sm:text-5xl lg:text-6xl">
-              Let&apos;s build something meaningful together.
+              Mari bangun sesuatu yang bermakna bersama.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">
-              Whether you have an idea, partnership opportunity, business inquiry, or simply want to connect, we&apos;d love to hear from you.
+              Baik Anda punya ide, peluang kolaborasi, pertanyaan bisnis, atau sekadar ingin terhubung, kami dengan senang hati ingin mendengar dari Anda.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#contact-form" className="inline-flex items-center justify-center rounded-full bg-brand-navy px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-brand-green">
-                Start the Conversation
+                Mulai Percakapan
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a href="#faq" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3.5 font-semibold text-brand-navy transition hover:border-brand-green hover:text-brand-green">
-                Explore FAQs
+                Lihat FAQ
               </a>
             </div>
           </div>
@@ -175,78 +185,120 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-360 px-6 py-6 sm:px-8 lg:px-12 lg:py-10">
-        <div className="reveal grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {contactCards.map((card) => {
-            const Icon = card.icon
-            return (
-              <a key={card.title} href={card.title === 'Email' ? 'mailto:hello@kollab.id' : card.title === 'WhatsApp' ? 'https://wa.me/6281234567890' : '#contact-form'} className="group rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-grey text-brand-green transition group-hover:bg-brand-green/10">
-                  <Icon className="h-5 w-5" />
+      <section className="mx-auto max-w-5xl px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div className="reveal text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/20 bg-brand-green/10 px-4 py-2 text-sm font-semibold text-brand-green">
+            <Sparkles className="h-4 w-4" />
+            Mari Terhubung
+          </div>
+          <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-black leading-tight text-brand-navy sm:text-5xl lg:text-6xl">
+            Setiap Kolaborasi Besar Dimulai dari Percakapan yang Bermakna.
+          </h2>
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+            Baik Anda mencari peluang partnership, komunitas, media, atau sekadar ingin terhubung, kami ada di sini untuk memulai percakapan.
+          </p>
+        </div>
+
+        <div className="reveal relative mt-16 md:mt-20">
+          {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(52,178,106,0.12),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(39,119,201,0.10),_transparent_34%)]" /> */}
+          <div className="absolute left-[35px] top-3 hidden h-[calc(100%-1.5rem)] w-px bg-gradient-to-b from-brand-green/60 via-brand-teal/50 to-brand-blue/60 md:block" />
+          <div className="space-y-8 md:space-y-10">
+            {contactCards.map((card, index) => {
+              const Icon = card.icon
+              return (
+                <div
+                  key={card.title}
+                  className="group relative md:grid md:grid-cols-[72px_1fr] md:items-start"
+                >
+                  <div className="relative z-10 flex md:justify-center md:pt-2">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-green via-brand-teal to-brand-blue text-white shadow-[0_0_0_10px_rgba(52,178,106,0.08)] transition duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_14px_rgba(52,178,106,0.16)]">
+                      <span className="absolute h-12 w-12 rounded-full bg-brand-green/20 blur-lg opacity-0 transition duration-300 group-hover:opacity-100" />
+                      <Icon className="relative h-5 w-5 transition duration-300 group-hover:rotate-12" />
+                    </div>
+                  </div>
+
+                  <div className="mt-4 md:mt-0 md:pl-4">
+                    <div className="max-w-2xl transition duration-300 group-hover:translate-x-1">
+                      <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-green/80">
+                        Node 0{index + 1}
+                      </div>
+                      <h3 className="text-3xl font-semibold text-brand-navy transition duration-300 group-hover:text-brand-green sm:text-[1.8rem]">
+                        {card.title}
+                      </h3>
+                      <p className="mt-2 text-xl font-semibold text-brand-navy">{card.value}</p>
+                      <p className="mt-3 text-base leading-7 text-slate-600 sm:text-lg">
+                        {card.description}
+                      </p>
+                      <a
+                        href={card.href}
+                        className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal transition duration-300 hover:text-brand-green"
+                      >
+                        <span className="underline-offset-4 transition group-hover:underline">{card.action}</span>
+                        <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-brand-navy">{card.title}</h3>
-                <p className="mt-2 text-sm font-medium text-brand-green">{card.value}</p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{card.description}</p>
-              </a>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </section>
 
       <section id="contact-form" className="mx-auto max-w-360 px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div className="reveal grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_24px_80px_rgba(15,23,42,0.06)] sm:p-10 lg:grid-cols-[0.92fr_1.08fr] lg:p-12">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-blue">Contact Form</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-blue">Form Kontak</p>
             <h2 className="mt-3 text-3xl font-black leading-tight text-brand-navy sm:text-4xl">
-              Share your idea, your vision, or your next move.
+              Ceritakan ide, visi, atau langkah berikutnya Anda.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              We believe the most meaningful work begins with a clear conversation. Tell us what you&apos;re building, and we&apos;ll find the right way to connect.
+              Kami percaya kerja yang bermakna dimulai dari percakapan yang jelas. Ceritakan apa yang sedang Anda bangun, dan kami akan membantu menemukan cara yang tepat untuk terhubung.
             </p>
             <div className="mt-8 rounded-[1.5rem] bg-brand-grey p-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green">
                 <Sparkles className="h-5 w-5" />
               </div>
-              <p className="mt-4 text-lg font-semibold text-brand-navy">A thoughtful response, not a templated one.</p>
-              <p className="mt-2 text-sm leading-7 text-slate-600">We tailor every reply to the context, the people involved, and the value behind the connection.</p>
+              <p className="mt-4 text-lg font-semibold text-brand-navy">Respons yang thoughtful, bukan jawaban yang templated.</p>
+              <p className="mt-2 text-sm leading-7 text-slate-600">Setiap balasan kami sesuaikan dengan konteks, orang-orang yang terlibat, dan nilai di balik koneksi tersebut.</p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block text-sm font-medium text-slate-700">
-                <span className="mb-2 block">Full Name</span>
+                <span className="mb-2 block">Nama Lengkap</span>
                 <input value={formState.name} onChange={(e) => setFormState({ ...formState, name: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Ayu Pratama" required />
               </label>
               <label className="block text-sm font-medium text-slate-700">
-                <span className="mb-2 block">Email Address</span>
+                <span className="mb-2 block">Alamat Email</span>
                 <input type="email" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="you@example.com" required />
               </label>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block text-sm font-medium text-slate-700">
-                <span className="mb-2 block">Phone Number</span>
-                <input value={formState.phone} onChange={(e) => setFormState({ ...formState, phone: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Optional" />
+                <span className="mb-2 block">Nomor Telepon</span>
+                <input value={formState.phone} onChange={(e) => setFormState({ ...formState, phone: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Opsional" />
               </label>
               <label className="block text-sm font-medium text-slate-700">
-                <span className="mb-2 block">Company / Organization</span>
-                <input value={formState.company} onChange={(e) => setFormState({ ...formState, company: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Optional" />
+                <span className="mb-2 block">Perusahaan / Organisasi</span>
+                <input value={formState.company} onChange={(e) => setFormState({ ...formState, company: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Opsional" />
               </label>
             </div>
 
             <label className="block text-sm font-medium text-slate-700">
-              <span className="mb-2 block">Subject</span>
-              <input value={formState.subject} onChange={(e) => setFormState({ ...formState, subject: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="What would you like to talk about?" required />
+              <span className="mb-2 block">Subjek</span>
+              <input value={formState.subject} onChange={(e) => setFormState({ ...formState, subject: e.target.value })} className="w-full rounded-2xl border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Apa yang ingin Anda bicarakan?" required />
             </label>
 
             <label className="block text-sm font-medium text-slate-700">
-              <span className="mb-2 block">Message</span>
-              <textarea value={formState.message} onChange={(e) => setFormState({ ...formState, message: e.target.value })} className="min-h-[170px] w-full rounded-[1.35rem] border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Tell us about your idea, your needs, or your invitation." required />
+              <span className="mb-2 block">Pesan</span>
+              <textarea value={formState.message} onChange={(e) => setFormState({ ...formState, message: e.target.value })} className="min-h-[170px] w-full rounded-[1.35rem] border border-slate-200 bg-brand-grey px-4 py-3.5 outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20" placeholder="Ceritakan ide, kebutuhan, atau undangan Anda." required />
             </label>
 
             <div className="rounded-[1.5rem] border border-slate-200 bg-brand-grey p-5">
-              <p className="text-sm font-semibold text-brand-navy">I&apos;m interested in:</p>
+              <p className="text-sm font-semibold text-brand-navy">Saya tertarik pada:</p>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {interests.map((interest) => {
                   const checked = selectedInterests.includes(interest)
@@ -261,7 +313,7 @@ const Contact = () => {
             </div>
 
             <button type="submit" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-green via-brand-teal to-brand-blue px-6 py-3.5 font-semibold text-white shadow-[0_16px_50px_rgba(52,178,106,0.22)] transition hover:-translate-y-0.5">
-              Send Message
+              Kirim Pesan
               <Send className="ml-2 h-4 w-4" />
             </button>
           </form>
@@ -271,21 +323,21 @@ const Contact = () => {
       <section className="mx-auto max-w-360 px-6 py-6 sm:px-8 lg:px-12">
         <div className="reveal rounded-[2rem] border border-slate-200 bg-gradient-to-r from-brand-green/10 via-white to-brand-blue/10 p-8 shadow-[0_20px_80px_rgba(15,23,42,0.05)] sm:p-10 lg:p-12">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-green">Collaboration Invitation</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-green">Undangan Kolaborasi</p>
             <h2 className="mt-3 text-3xl font-black leading-tight text-brand-navy sm:text-4xl">
-              Great collaborations begin with meaningful connections.
+              Kolaborasi yang luar biasa dimulai dari koneksi yang bermakna.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              KOLLAB exists to connect people, ideas, and opportunities that create lasting growth. Whether you&apos;re an individual, creator, professional, startup, or business, let&apos;s explore what we can build together.
+              KOLLAB hadir untuk menghubungkan orang, ide, dan peluang yang mendorong pertumbuhan yang berkelanjutan. Baik Anda individu, creator, profesional, startup, maupun bisnis, mari jelajahi apa yang bisa kita bangun bersama.
             </p>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="mailto:hello@kollab.id" className="inline-flex items-center justify-center rounded-full bg-brand-navy px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-brand-green">
-              Become a Partner
+              Jadi Partner
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
             <a href="#contact-form" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3.5 font-semibold text-brand-navy transition hover:border-brand-green hover:text-brand-green">
-              Join the Community
+              Bergabung dengan Komunitas
             </a>
           </div>
         </div>
@@ -294,7 +346,7 @@ const Contact = () => {
       <section id="faq" className="mx-auto max-w-360 px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div className="reveal max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-teal">FAQ</p>
-          <h2 className="mt-3 text-3xl font-black text-brand-navy sm:text-4xl">Questions people often ask before reaching out.</h2>
+          <h2 className="mt-3 text-3xl font-black text-brand-navy sm:text-4xl">Pertanyaan yang sering muncul sebelum Anda menghubungi kami.</h2>
         </div>
         <div className="reveal mt-8 space-y-4">
           {faqs.map((faq, index) => {
@@ -322,9 +374,9 @@ const Contact = () => {
           <div className="absolute bottom-8 left-16 h-2 w-2 rounded-full bg-brand-teal/70" />
           <div className="absolute bottom-10 right-16 h-3 w-3 rounded-full bg-brand-navy/70" />
           <div className="relative mx-auto max-w-3xl">
-            <p className="text-lg font-semibold text-brand-green sm:text-xl">“When meaningful people connect, great opportunities naturally follow.”</p>
+            <p className="text-lg font-semibold text-brand-green sm:text-xl">“Saat orang-orang yang bermakna terhubung, peluang besar akan hadir secara alami.”</p>
             <p className="mt-6 text-3xl font-black leading-tight text-brand-navy sm:text-4xl lg:text-5xl">
-              When meaningful people connect, great opportunities naturally follow.
+              Saat orang-orang yang bermakna terhubung, peluang besar akan hadir secara alami.
             </p>
             <p className="mt-6 text-lg font-semibold text-slate-600">— KOLLAB</p>
           </div>

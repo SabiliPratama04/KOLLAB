@@ -195,7 +195,7 @@ const About = () => {
   ]
 
   return (
-    <div className="space-y-24 md:space-y-32 pb-24">
+    <div className="space-y-24 md:space-y-32 py-24">
       <section className="h-[80vh] grid grid-cols-12 max-w-360 mx-auto px-6 md:px-12 pt-8">
         <div className="flex flex-col justify-center items-start space-y-6 md:col-span-7 h-full">
           <div className="space-y-4">

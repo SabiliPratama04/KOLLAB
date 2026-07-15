@@ -69,7 +69,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Programs', path: '/programs' },
-    { name: 'Community', path: '/programs#community-activation' },
+    // { name: 'Community', path: '/programs#community-activation' },
     { name: 'Partnership', path: '/programs#partnership-program' },
     { name: 'Contact', path: '/contact' },
   ]
